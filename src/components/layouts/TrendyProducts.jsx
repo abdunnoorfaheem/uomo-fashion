@@ -64,7 +64,7 @@ const TrendyProducts = () => {
             <div className="flex flex-wrap justify-between">
               {
                 
-                    allProduct.map((item)=>(
+                    allProduct.slice(0,8).map((item)=>(
                     <Product
                 productImage={item.thumbnail}
                 productText={item.category}
@@ -79,6 +79,9 @@ const TrendyProducts = () => {
            
             
           </Flex>
+        </div>
+        <div className="py-[50px]">
+          <Heading text={"SEE ALL PRODUCT..."} tagName={"h4"} className={"text-[14px] font-semibold text-center"}/>
         </div>
       </Container>
     </>
