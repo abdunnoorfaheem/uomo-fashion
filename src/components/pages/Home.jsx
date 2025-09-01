@@ -5,6 +5,8 @@ import TrendyProducts from '../layouts/TrendyProducts';
 import SpringCollections from '../layouts/SpringCollections';
 import SpecialProduct from '../layouts/SpecialProduct';
 import LimitedProduct from '../layouts/LimitedProduct';
+import Uomo from '../layouts/Uomo';
+import Facility from '../layouts/Facility';
 
 
 const Home = () => {
@@ -17,6 +19,8 @@ const Home = () => {
      <SpringCollections/>
      <SpecialProduct/>
      <LimitedProduct/>
+     <Uomo/>
+     <Facility/>
     </>
   )
 }

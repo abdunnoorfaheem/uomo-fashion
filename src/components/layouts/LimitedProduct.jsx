@@ -36,10 +36,10 @@ const LimitedProduct = () => {
         <Heading
           text={"LIMITED EDITION"}
           tagName={"h3"}
-          className={"text-[35px] font-medium text-center"}
+          className={"text-[35px] font-medium text-center mb-[30px]"}
         />
-        <div className="mx-3">
-            <Slider {...settings}>
+        <div className="-mx-3">
+            <Slider {...settings} >
           {allData.map((item) => (
             <div key={item.id}>
               <Product
