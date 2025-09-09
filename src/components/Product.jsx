@@ -4,8 +4,21 @@ import Heading from "./Heading";
 
 import { CiHeart } from "react-icons/ci";
 import Image from "./Image";
+import { TbShoppingCartPlus } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../slices/addToCartSlice";
 
 const Product = ({productImage,productText,productTitle,productPrice}) => {
+  let dispatch=useDispatch();
+  let handleAddToCart =()=>{
+    dispatch(addtocart({
+      productImg:productImage,
+      title:productTitle,
+      price:productPrice,
+      quantity:1
+    }))
+    
+  }
   return (
     <>
       <div className="">
@@ -26,6 +39,7 @@ const Product = ({productImage,productText,productTitle,productPrice}) => {
           </div>
           <div className="mt-[10px] text-[18px]">
             <CiHeart />
+            <TbShoppingCartPlus onClick={handleAddToCart}/>
           </div>
         </div>
       </div>

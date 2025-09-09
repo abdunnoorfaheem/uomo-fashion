@@ -4,23 +4,20 @@ import Flex from "../Flex";
 import Heading from "../Heading";
 import Product from "../Product";
 import TRENDYONE from "/src/assets/trendyOne.png";
-import {useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const TrendyProducts = () => {
-    let [allProduct,setAllProduct]=useState([]);
-    
-    useEffect(() => {
+  let [allProduct, setAllProduct] = useState([]);
 
-        async function viewProduct(){
-        let data=await axios.get('https://dummyjson.com/products');
-        setAllProduct(data.data.products);
-        
-        }
-        viewProduct();
-      
-    }, []);
-    
+  useEffect(() => {
+    async function viewProduct() {
+      let data = await axios.get("https://dummyjson.com/products");
+      setAllProduct(data.data.products);
+    }
+    viewProduct();
+  }, []);
+
   return (
     <>
       <Container>
@@ -62,26 +59,25 @@ const TrendyProducts = () => {
         <div className="py-[30px]">
           <Flex className={"justify-between"}>
             <div className="flex flex-wrap justify-between">
-              {
-                
-                    allProduct.slice(0,8).map((item)=>(
-                    <Product
-                productImage={item.thumbnail}
-                productText={item.category}
-                productTitle={item.title}
-                productPrice={item.price}
-              />
-                ))
-               
-              }
+              {allProduct.slice(0, 8).map((item) => (
+                <div className="" key={item.id}>
+                  <Product
+                    productImage={item.thumbnail}
+                    productText={item.category}
+                    productTitle={item.title}
+                    productPrice={item.price}
+                  />
+                </div>
+              ))}
             </div>
-            
-           
-            
           </Flex>
         </div>
         <div className="py-[50px]">
-          <Heading text={"SEE ALL PRODUCT..."} tagName={"h4"} className={"text-[14px] font-semibold text-center"}/>
+          <Heading
+            text={"SEE ALL PRODUCT..."}
+            tagName={"h4"}
+            className={"text-[14px] font-semibold text-center"}
+          />
         </div>
       </Container>
     </>
