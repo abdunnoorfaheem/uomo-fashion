@@ -8,8 +8,7 @@ import { FaSearch, FaRegUser, FaRegHeart, FaBars } from "react-icons/fa";
 import { LuShoppingBag } from "react-icons/lu";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
-import  {useSelector}  from "react-redux";
-
+import { useSelector } from "react-redux";
 
 const Header = () => {
   let [showCart, setShowCart] = useState(false);
@@ -59,33 +58,36 @@ const Header = () => {
             </div>
           </Flex>
           {showCart && (
-            <div className="h-screen w-[600px] bg-lime-100 absolute right-0 top-0">
-              <RxCross1
-                onClick={() => {
-                  setShowCart(!showCart);
-                }}
-              />
+            <div
+              className="h-screen w-[600px] bg-lime-100 absolute right-0 top-0"
+              onClick={() => {
+                setShowCart(!showCart);
+              }}
+            >
+              <RxCross1 />
               <ul className="py-7">
-               <div className="flex justify-between bg-gray-300 py-4 px-2 font-bold">
-                <li>Product</li>
-                <li>Product Name</li>
-                <li>Product price</li>
-                <li>Product Quantity</li>
-               </div>
-              {data.map((item) => (
-                <div className="flex justify-between py-3 px-2 bg-white" key={item.id}>
-
-                  <li><img src={item.productImg} className="w-[60px]" /></li>
-                  <li>{item.title}</li>
-                  <li>{item.price}</li>
-                  <li>{item.quantity}</li>
+                <div className="flex justify-between bg-gray-300 py-4 px-2 font-bold">
+                  <li>Product</li>
+                  <li>Product Name</li>
+                  <li>Product price</li>
+                  <li>Product Quantity</li>
                 </div>
-              ))}
-           
-          </ul>
+                {data.map((item) => (
+                  <div
+                    className="flex justify-between py-3 px-2 bg-white"
+                    key={item.id}
+                  >
+                    <li>
+                      <img src={item.productImg} className="w-[60px]" />
+                    </li>
+                    <li>{item.title}</li>
+                    <li>{item.price}</li>
+                    <li>{item.quantity}</li>
+                  </div>
+                ))}
+              </ul>
             </div>
           )}
-          
         </Container>
       </div>
     </>

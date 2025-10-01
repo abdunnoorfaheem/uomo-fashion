@@ -1,3 +1,11 @@
 *{
   font-family: "Jost", sans-serif;
 }
+
+ .slick-dots li.slick-active div {
+          background: red !important;
+          transform: scale(1.2);
+        }
+        .slick-dots li div {
+          background: gray !important;
+        }
